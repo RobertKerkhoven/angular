@@ -13,6 +13,9 @@ export class TasksItemComponent implements OnInit {
   @Input() task: Task;
   // tslint:disable-next-line:no-output-on-prefix
   @Output() onDeleteTask: EventEmitter<Task> = new EventEmitter<Task>();
+
+  // tslint:disable-next-line:no-output-on-prefix
+  @Output() onToggleReminder: EventEmitter<Task> = new EventEmitter<Task>();
   faTimes = faTimes;
 
   constructor() {}
@@ -21,6 +24,10 @@ export class TasksItemComponent implements OnInit {
   }
   // tslint:disable-next-line:typedef
   onDelete(task: Task) { this.onDeleteTask.emit(task);
+  }
+
+  // tslint:disable-next-line:typedef
+  onToggle(task: Task) { this.onToggleReminder.emit(task);
   }
 
 }

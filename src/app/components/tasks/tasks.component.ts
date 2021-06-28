@@ -26,4 +26,10 @@ export class TasksComponent implements OnInit {
     );
   }
 
+  // tslint:disable-next-line:typedef
+  toggleReminder(task: Task) {
+    task.reminder = !task.reminder;
+    this.taskService.updateTaskReminder(task).subscribe();
+  }
+
 }
